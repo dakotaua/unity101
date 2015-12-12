@@ -45,6 +45,16 @@ public class NinjaControllerScript : MonoBehaviour {
 		resolveMovement();
     }
 
+    void OnTriggerEnter2D(Collider2D other) {
+
+        if (other.tag.Equals("worldPit")) {
+            Application.LoadLevel("test_scene");
+        }
+    }
+
+
+
+
 	private void resolveMovement() {
 
 		float horizontalInput = Input.GetAxis("Horizontal");
@@ -92,5 +102,7 @@ public class NinjaControllerScript : MonoBehaviour {
 		animator.SetBool ("grounded", isGrounded);
 		animator.SetFloat ("vSpeed", rigidBody.velocity.y);
 	}
+
+   
 		
 }
