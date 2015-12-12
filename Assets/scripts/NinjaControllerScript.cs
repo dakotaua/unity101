@@ -41,7 +41,7 @@ public class NinjaControllerScript : MonoBehaviour {
 
     // this Update is called once per physics step
     void FixedUpdate() {
-		checkGrounded ();
+        checkGrounded();
 		resolveMovement();
     }
 
