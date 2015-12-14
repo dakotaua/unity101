@@ -21,13 +21,11 @@ public class MummyControllerScript : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        print("Mummy update");
         resolveMovement();
     }
 
     void fixedUpdate() {
 
-        print("Mummy fixedUpdate");
     }
 
     private void resolveMovement() {
@@ -35,19 +33,15 @@ public class MummyControllerScript : MonoBehaviour
         shambleTime += Time.deltaTime;
         if (shambleTime > MAX_SHAMBLE_TIME)
         {
-            print("Mummy reached shambleCount. About face!");
             Flip();
             shambleTime = 0;
         }
-        print("setting mummy x velocity to " + facing * shambleSpeed);
         rigidBody.velocity = new Vector2(facing * shambleSpeed, rigidBody.velocity.y);
 
     }
 
     private void Flip()
     {
-       // print("Flip - localScale currently: " + transform.localScale.x);
-       // print("Flip - facing currently: " + transform.
         facing *= -1;
         transform.localScale = new Vector2(transform.localScale.x *-1, transform.localScale.y);
     }
