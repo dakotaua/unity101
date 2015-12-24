@@ -5,15 +5,15 @@ public class MummyControllerScript : MonoBehaviour
 {
 
     public float shambleSpeed = 5f;
-    public int MAX_SHAMBLE_COUNT = 3000;
     public float MAX_SHAMBLE_TIME = 5f;
     private int facing;
-    private Rigidbody2D rigidBody;
     private float shambleTime;
 
+	// components
+	private Rigidbody2D rigidBody;
+
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         facing = 1;
         shambleTime = 0;
         rigidBody = GetComponent<Rigidbody2D>();
